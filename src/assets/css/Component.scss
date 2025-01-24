@@ -1,0 +1,35 @@
+//colors
+$primary:#f43676;
+$gradient-start-color: #fc6668;
+$gradient-end-color: #E10489;
+$boxes-background-color: #fff9f3;
+$boxes-border-color: #ffe7d2;
+$textHover-color: linear-gradient(to right, #AEF3FF 0%, #AEF3FF 100%);
+$white: #ffffff;
+$black:#002050;
+$titles-color: #302d55;
+$text-color: #828d9c;
+$light-gray: #ecf1f5;
+$gradient-color: linear-gradient(103deg, var($gradient-start-color) 0%, var($gradient-end-color) 100%);
+$boxes-shadow: 2px 2px 3px 0px rgba(93, 112, 234, 0.1);
+$small-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
+$medium-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.30), 0px 13px 27px -5px rgba(50, 50, 93, 0.25);
+$transition-bezier: cubic-bezier(.5,2.5,.7,.7);
+
+//fonts
+$bsefont: "Be Vietnam Pro", serif;
+
+//type
+$text-xl:34px;
+$text-lg:28px;
+$text-md:20px;
+$text-sm:15px;
+$text-xsm:14px;
+$text-bottomTab:10px;
+
+//common css
+.d-flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

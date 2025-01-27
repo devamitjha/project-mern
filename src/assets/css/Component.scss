@@ -4,14 +4,17 @@ $gradient-start-color: #fc6668;
 $gradient-end-color: #E10489;
 $boxes-background-color: #fff9f3;
 $boxes-border-color: #ffe7d2;
+$border-color:#F3F6FA;
 $textHover-color: linear-gradient(to right, #AEF3FF 0%, #AEF3FF 100%);
 $white: #ffffff;
 $black:#002050;
 $titles-color: #302d55;
 $text-color: #828d9c;
+$text-color-light: #4D6385;
 $light-gray: #ecf1f5;
-$gradient-color: linear-gradient(103deg, var($gradient-start-color) 0%, var($gradient-end-color) 100%);
-$boxes-shadow: 2px 2px 3px 0px rgba(93, 112, 234, 0.1);
+$gradient-color: linear-gradient(103deg, ($gradient-start-color) 0%, ($gradient-end-color) 100%);
+$boxes-shadow: 0px 0px 20px 10px rgba(50, 50, 93, 0.05);;
+$boxes-shadow-dark: 2px 2px 3px 0px rgba(93, 112, 234, 0.1);
 $small-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
 $medium-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.30), 0px 13px 27px -5px rgba(50, 50, 93, 0.25);
 $transition-bezier: cubic-bezier(.5,2.5,.7,.7);
@@ -29,7 +32,64 @@ $text-bottomTab:10px;
 
 //common css
 .d-flex{
-    display:flex;
+    display:flex;    
     justify-content: center;
     align-items: center;
+    &.justify-start{
+        justify-content: start;
+    }
+    &.justify-end{
+        justify-content: end;
+    }
+    &.justify-between{
+        justify-content: space-between;
+    }
+    &.align-start{
+        align-items: start;
+    }
+    &.align-end{
+        align-items: end;
+    }
+}
+.container{
+    max-width:1280px;
+    width:90%;
+    display:block;
+    margin:0 auto;
+    &.full-width{
+        max-width: 100%;
+        width:100%;
+    }
+}
+.row{
+    display:block;
+    width:100%;    
+}
+.px-100{
+    padding:0 100px;
+}
+.px-50{
+    padding:0 50px;
+}
+.mt-50{
+    margin-top:50px;
+}
+
+.btn{
+    padding: 7px 22px;        
+    border-radius: 8px;
+    &.filled{
+        background: $gradient-color;
+        border:1px solid $primary;
+    }
+    &.outline{
+        border:1px solid $primary;
+    }
+}
+.line-clamp{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
 }

@@ -10,8 +10,9 @@ import Book from "../../../assets/images/book.jpg";
 import Wave from "../../../assets/images/wave2.svg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
+import TitleDecoration from "../../../components/TitleDecoration";
+import BlogList from "../../../components/desktop/BlogList/BlogList";
+import BlogSidebar from "../../../components/desktop/BlogSidebar/BlogSidebar";
 const WaveComponent = () => {
   return (
       <div className="waves-page">
@@ -92,7 +93,7 @@ const Home = () => {
         <meta name="keywords" content="keyword1, keyword2" />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      {WaveComponent()}
+      {/* {WaveComponent()} */}
       <div className="container mt-50">
         <div className="section-slider">
           <div className="section-slider-image">
@@ -134,12 +135,11 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <div className="section-blog-post">
-          <div className="section-blog-list">
-            left
-          </div>
-          <div className="section-blog-sidebar">
-            right
+        <div className="content-wrapper">
+          <TitleDecoration title="Latest Articles" size="big"/>
+          <div className="section-blog-post">
+            <BlogList/>           
+            <BlogSidebar/>       
           </div>
         </div>
       </div>

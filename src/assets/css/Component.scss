@@ -31,6 +31,11 @@ $text-xsm:14px;
 $text-bottomTab:10px;
 
 //common css
+::selection {
+    background-color: $black;
+    color: $white;
+    text-shadow: none;
+}
 .d-flex{
     display:flex;    
     justify-content: center;
@@ -60,6 +65,9 @@ $text-bottomTab:10px;
         max-width: 100%;
         width:100%;
     }
+}
+.full-height{
+    height:100vh;
 }
 .row{
     display:block;
@@ -153,5 +161,17 @@ $text-bottomTab:10px;
     100% {
         -webkit-transform: translate(352px);
         transform: translate(352px);
+    }
+}
+
+a.hover{
+    background-image: linear-gradient(to right, #AEF3FF 0%, #AEF3FF 100%);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: left 90%;
+    transition: all 400ms ease;
+    &:hover{
+        color: $black;
+        background-size: 100% 25%;       
     }
 }

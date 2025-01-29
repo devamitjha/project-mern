@@ -113,7 +113,7 @@ const Home = () => {
                 onMouseEnter={() => handleHover(index)} // Trigger hover effect
               >
                 <span className="count">{index + 1}</span>
-                <h2>{article.title}</h2>
+                <h2><Link to="/" className="hover">{article.title}</Link></h2>
                 <div className="article-content">
                   <p>{article.content}</p>
                   <div className="meta">
@@ -138,7 +138,9 @@ const Home = () => {
         <div className="content-wrapper">
           <TitleDecoration title="Latest Articles" size="big"/>
           <div className="section-blog-post">
-            <BlogList/>           
+          <div className="section-blog-list">
+            <BlogList/>
+          </div>
             <BlogSidebar/>       
           </div>
         </div>

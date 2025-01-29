@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import "./BlogSidebar.scss";
 import TitleDecoration from '../../TitleDecoration';
 import Avatar from "../../../assets/images/avatar-2.jpg";
-import Thumb from "../../../assets/images/cat-color-small.jpg";
 import CategorySlider from '../../categorySlider/CategorySlider';
 import StickyBox from "react-sticky-box";
+import FeaturePost from '../../FeaturePost';
 
 
 const BlogSidebar = () => {  
@@ -19,7 +19,7 @@ const BlogSidebar = () => {
                 <img src={Avatar} alt="author"/>
               </span>            
             <div className="author-name">
-              <h4>Adriana Martins</h4>
+              <h4><Link to="/" className="hover">Adriana Martins</Link></h4>
               <span>India</span>
             </div>
           </div>
@@ -44,30 +44,8 @@ const BlogSidebar = () => {
         <div className="widget featured">
           <TitleDecoration title="Featured Articles" size="small"/>
           <div className="meta">            
-            <div className="article">
-              <div className="thumb">
-                <img src={Thumb} alrt="thumb"/>
-              </div>
-              <div className="details">
-                <h4>Animals that captivate people with their intelligence</h4>
-                <div className="author">
-                  <div className="dot"></div>
-                  By<span>Adriana Martins</span>
-                </div>
-              </div>
-            </div>
-            <div className="article">
-              <div className="thumb">
-                <img src={Thumb} alrt="thumb"/>
-              </div>
-              <div className="details">
-                <h4>Animals that captivate people with their intelligence</h4>
-                <div className="author">
-                  <div className="dot"></div>
-                  By<span>Adriana Martins</span>
-                </div>
-              </div>
-            </div>
+            <FeaturePost/>
+            <FeaturePost/>
           </div>
         </div>
         <div className="widget categories">

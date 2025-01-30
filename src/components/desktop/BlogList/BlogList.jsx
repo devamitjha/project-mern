@@ -13,7 +13,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                    <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                    <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2> 
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">
@@ -46,7 +46,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                  <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                  <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">
@@ -79,7 +79,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                  <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                  <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">
@@ -112,7 +112,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                  <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                  <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">
@@ -145,7 +145,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                  <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                  <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">
@@ -178,7 +178,7 @@ const BlogList = () => {
             </div>
             <div className="card-content">
                 <div className="card-title">
-                  <h2><Link to="#" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
+                  <h2><Link to="blog/post/category/title/id" className="hover">Modern and colorful style of caricatures created by AI</Link></h2>
                 </div>
                 <div className="meta">
                     <Link to="/" className="author-bio">

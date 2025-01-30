@@ -21,6 +21,7 @@ const Layout = () => {
 
   return (
     <div className="blogApp">
+      
       {isMobile ? (
         <>
           <Header />

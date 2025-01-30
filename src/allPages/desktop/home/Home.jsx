@@ -138,9 +138,9 @@ const Home = () => {
         <div className="content-wrapper">
           <TitleDecoration title="Latest Articles" size="big"/>
           <div className="section-blog-post">
-          <div className="section-blog-list">
-            <BlogList/>
-          </div>
+            <div className="section-blog-list">
+              <BlogList/>
+            </div>
             <BlogSidebar/>       
           </div>
         </div>

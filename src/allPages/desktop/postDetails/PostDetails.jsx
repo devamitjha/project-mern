@@ -6,6 +6,7 @@ import SampleImage from "../../../assets/images/avatar-3.jpg";
 import Avatar from "../../../assets/images/avatar.jpg";
 import TitleDecoration from '../../../components/TitleDecoration';
 import FeaturePost from '../../../components/FeaturePost';
+import HomeWave from '../../../components/HomeWave';
 
 const AuthorCard = ()=>{  
   return(
@@ -150,7 +151,10 @@ const PostDetails = () => {
   );
 
   return (
-    <div className="content-wrapper post-detail-page">      
+    <div className="content-wrapper post-detail-page">   
+      <div classname="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
+        <HomeWave/>
+      </div>   
       <div className="container">
         <div className="section-post-title">
           <div className="post-title-container">

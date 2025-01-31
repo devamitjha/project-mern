@@ -7,36 +7,12 @@ import Phone from "../../../assets/images/phone.jpg";
 import Avatar from "../../../assets/images/avatar-2.jpg";
 import Ball from "../../../assets/images/ball.jpg";
 import Book from "../../../assets/images/book.jpg";
-import Wave from "../../../assets/images/wave2.svg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TitleDecoration from "../../../components/TitleDecoration";
 import BlogList from "../../../components/desktop/BlogList/BlogList";
 import BlogSidebar from "../../../components/desktop/BlogSidebar/BlogSidebar";
-const WaveComponent = () => {
-  return (
-      <div className="waves-page">
-        <div
-          className="wave wave-1"
-          style={{
-            background: `url(${Wave}) repeat-x 0 0`,
-          }}
-        ></div>
-        <div
-          className="wave wave-2"
-          style={{
-            background: `url(${Wave}) repeat-x 0 0`,
-          }}
-        ></div>
-        <div
-          className="wave wave-3"
-          style={{
-            background: `url(${Wave}) repeat-x 0 0`,
-          }}
-        ></div>
-      </div>
-  );
-};
+import HomeWave from "../../../components/HomeWave";
 
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -86,15 +62,17 @@ const Home = () => {
   };
 
   return (
-    <div className="section-homepage">
+    <div className="section-homepage">      
       <Helmet>
         <title>Home Page</title>
         <meta name="description" content="Page Description" />
         <meta name="keywords" content="keyword1, keyword2" />
         <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      {/* {WaveComponent()} */}
-      <div className="container mt-50">
+      </Helmet>     
+      <div classname="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
+        <HomeWave/>
+      </div>
+      <div className="container mt-50">        
         <div className="section-slider">
           <div className="section-slider-image">
             <Slider {...settings} ref={sliderRef}>

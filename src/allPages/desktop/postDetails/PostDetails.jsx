@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./PostDetails.scss"
 import BlogSidebar from '../../../components/desktop/BlogSidebar/BlogSidebar';
 import SampleImage from "../../../assets/images/avatar-3.jpg";
@@ -37,11 +37,11 @@ const isUser = (id)=>{
   return(
     <div className="conment-input">
       <h3>Responses (10)</h3>
-      <form class="comment-form" action="#">
-        <textarea class="input-textarea" rows="4" placeholder="Add to discussion" required=""/>
-        <div class="btn-group">
-          <div class="btn filled">Submit</div>
-          <div class="btn outline">Cancel</div>
+      <form className="comment-form" action="#">
+        <textarea className="input-textarea" rows="4" placeholder="Add to discussion" required=""/>
+        <div className="btn-group">
+          <div className="btn filled">Submit</div>
+          <div className="btn outline">Cancel</div>
         </div>
       </form>
     </div>
@@ -49,7 +49,106 @@ const isUser = (id)=>{
 }
 
 const PostDetails = () => {
+  let navigate = useNavigate();
   const [user, setUser] = useState(true);
+  const [openReplyId, setOpenReplyId] = useState(null); // Track which comment/reply's reply box is open
+  const [replies, setReplies] = useState({}); // Store replies for each comment/reply
+
+  const comments = [
+    { id: 1, author: "Adriana Martins", date: "Oct 21, 2023", content: "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio." },
+    { id: 2, author: "John Doe", date: "Oct 22, 2023", content: "Another comment here." },
+    // Add more comments as needed
+  ];
+
+  const SubmitReply = (parentId, replyText) => {
+    // Add the reply to the replies state
+    setReplies((prevReplies) => ({
+      ...prevReplies,
+      [parentId]: [
+        ...(prevReplies[parentId] || []),
+        { id: Date.now(), author: "Current User", date: new Date().toLocaleDateString(), content: replyText },
+      ],
+    }));
+    setOpenReplyId(null); // Close the reply box after submitting
+  };
+
+  const ReplyComment = (parentId) => {
+    if (user) {
+      setOpenReplyId(parentId); // Open the reply box for the specific comment/reply
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const CancleComment = () => {
+    setOpenReplyId(null); // Close the reply box
+  };
+
+  // Recursive function to render comments and their replies
+  const renderComment = (comment, isReply = false) => (
+    <div key={comment.id} className="parent-container">
+    <div className={isReply ? "comment-reply replied" : "comment-reply"}>
+      <div className="comment-author">
+        <img src={Avatar} alt="author" />
+      </div>
+      <div className="comment-text">
+        <div className="author-name">
+          <Link to="#">{comment.author}</Link>
+          <div className="date"><span className="dot"></span>{comment.date}</div>
+        </div>
+        <p>{comment.content}</p>
+
+        {/* Reply input box */}
+        {user && openReplyId === comment.id && (
+          <div className="reply-input">
+            <form
+              className="comment-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const replyText = e.target.reply.value.trim();
+                if (replyText) {
+                  SubmitReply(comment.id, replyText);
+                  e.target.reset(); // Clear the textarea
+                }
+              }}
+            >
+              <textarea
+                className="input-textarea"
+                name="reply"
+                rows="4"
+                placeholder="Add to discussion"
+                required
+              />
+              <div className="btn-group">
+                <button type="submit" className="btn filled">Submit</button>
+                <div className="btn outline" onClick={CancleComment}>Cancel</div>
+              </div>
+            </form>
+          </div>
+        )}
+
+        {/* Like and Reply buttons */}
+        {!openReplyId && (
+          <div className="reply-group">
+            <div className="like-btn">
+              <i className="fa fa-heart-o" />
+              <span>20</span>
+            </div>
+            <div className="like-btn" onClick={() => ReplyComment(comment.id)}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="reply-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
+              </svg>
+              <span>Reply</span>
+            </div>
+          </div>
+        )}        
+      </div>
+    </div>
+    {/* Render replies for this comment */}
+    {replies[comment.id] && replies[comment.id].map((reply) => renderComment(reply, true))}
+    </div>
+  );
+
   return (
     <div className="content-wrapper post-detail-page">      
       <div className="container">
@@ -137,7 +236,8 @@ const PostDetails = () => {
             <div className="post-comment">
               {               
                 user ? isUser("id") : notUser()                
-              }             
+              }     
+             {comments.map((comment) => renderComment(comment))}  
             </div>
           </div>
           <BlogSidebar/>       

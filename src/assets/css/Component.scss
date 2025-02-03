@@ -38,6 +38,9 @@ $post-text:17px;
     color: $white;
     text-shadow: none;
 }
+.isPopup{
+    overflow: hidden;
+}
 .d-flex{
     display:flex;    
     justify-content: center;

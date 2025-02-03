@@ -13,6 +13,10 @@ import DesktopPostDetails from './allPages/desktop/postDetails/PostDetails';
 import DesktopLogin from './allPages/desktop/login/Login';
 import DesktopRegister from './allPages/desktop/register/Register';
 import DesktopCategory from './allPages/desktop/category/Category';
+import DesktopCategoryByName from './allPages/desktop/category/SingleCategory';
+import DesktopAuthor from './allPages/desktop/author/Author';
+import DesktopAuthorPosts from './allPages/desktop/author/AuthorPosts';
+import PageNotFound from './allPages/pageNotFound';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
@@ -45,14 +49,20 @@ function App() {
           { path: "blog/categories", element: <Category /> },
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
+          { path: "*", element: <PageNotFound /> },
         ]
       : [
           { index: true, element: <DesktopHome /> },
           { path: "blog/post", element: <DesktopPost /> },
           { path: "blog/post/:category/:title/:id", element: <DesktopPostDetails /> },
           { path: "blog/categories", element: <DesktopCategory /> },
+          { path: "blog/:categories/:catname", element: <DesktopCategoryByName /> },
+          { path: "blog/:tags/:tag", element: <DesktopCategoryByName /> },
+          { path: "blog/authors", element: <DesktopAuthor /> },
+          { path: "blog/authors/:name/:id", element: <DesktopAuthorPosts /> },
           { path: "login", element: <DesktopLogin /> },
           { path: "register", element: <DesktopRegister /> },
+          { path: "*", element: <PageNotFound /> },
         ],
     },
   ]);

@@ -27,8 +27,8 @@ const Header = () => {
           <div className="menu-center">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/">Category</Link></li>
-              <li><Link to="/">Author</Link></li>
+              <li><Link to="/blog/categories">Category</Link></li>
+              <li><Link to="/blog/authors">Author</Link></li>
               <li><Link to="/">Pages</Link></li>
               <li><Link to="/">Components</Link></li>
               <li><Link to="/">Feature</Link></li>

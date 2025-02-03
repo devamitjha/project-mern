@@ -152,7 +152,7 @@ const PostDetails = () => {
 
   return (
     <div className="content-wrapper post-detail-page">   
-      <div classname="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
+      <div className="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
         <HomeWave/>
       </div>   
       <div className="container">

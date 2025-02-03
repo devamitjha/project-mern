@@ -69,7 +69,7 @@ const Home = () => {
         <meta name="keywords" content="keyword1, keyword2" />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>     
-      <div classname="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
+      <div className="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
         <HomeWave/>
       </div>
       <div className="container mt-50">        

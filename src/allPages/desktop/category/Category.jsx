@@ -199,7 +199,13 @@ const Category = () => {
       </div>   
       <div className="container category-page">
           <div className="cat-feature-image">
-            <img src={CategoryImage} alt="feature-image"/>
+            <img 
+              src={CategoryImage} 
+              alt="feature-image"
+              width="1280"
+              height="450"
+              fetchPriority="high"
+            />
             <div className="selected-cat-name">
               <h2>Education</h2>
               <span>10 Articles</span>

@@ -1,13 +1,55 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { Link} from 'react-router-dom';
+import "../category/Category.scss";
+import CardImage from "../../../assets/images/flower.jpg";
+import Avatar from "../../../assets/images/avatar.jpg";
 
-const SingleCategory = () => {
-    const { categories, catname } = useParams();
-    const { tags, tag } = useParams();
+
+const SingleCategory = () => {  
+
   return (
-    <div>
-      single category
-    </div>
+    <>    
+      <div className="cat-card">
+        <Link className="catName">Education</Link>
+        <div className="cat-card-image">
+          <img src={CardImage} alt="blot-title"/>
+        </div>
+        <div className="cat-card-body">
+          <div className="meta">
+            <Link to="/" className="author-bio">
+              <span className="img">
+                <img src={Avatar} alt="Author" />
+              </span>
+              <span className="author-name">
+                By <span> Adriana Martins</span>
+              </span>
+            </Link>
+            <time className="time">
+              <span className="dot"></span>
+              October 21, 2023
+            </time>
+          </div>
+          <h2>Modern and colorful style of caricatures created by AI</h2>
+        </div> 
+        <div className="cat-card-footer">
+          <div className="social">
+            <div className="section-left">
+              <div className="icon-box value">
+                <i className="fa fa-heart-o"></i><span>40</span>
+              </div>
+              <div className="icon-box value">
+                <i className="fa fa-comment-o"></i><span>20</span>
+              </div>
+            </div>
+            <div className="section-right">
+              <div className="icon-box">
+                <i className="fa fa-bookmark-o"></i>
+              </div>
+            </div>
+          </div>
+        </div>           
+      </div>
+    </>
   )
 }
 

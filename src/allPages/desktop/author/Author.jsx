@@ -25,8 +25,9 @@ const Authors = () => {
         </div>
       </div>
       <div className="container">
-        <div className="author-list">
-          <Link to={`name/id`} className="authorCard">
+        <div className="author-list">         
+          
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -41,7 +42,7 @@ const Authors = () => {
               </div>
             </div>
           </Link>
-          <Link to={`name/id`} className="authorCard">
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -56,7 +57,7 @@ const Authors = () => {
               </div>
             </div>
           </Link>
-          <Link to={`name/id`} className="authorCard">
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -71,7 +72,7 @@ const Authors = () => {
               </div>
             </div>
           </Link>
-          <Link to={`name/id`} className="authorCard">
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -86,7 +87,7 @@ const Authors = () => {
               </div>
             </div>
           </Link>
-          <Link to={`name/id`} className="authorCard">
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -101,22 +102,7 @@ const Authors = () => {
               </div>
             </div>
           </Link>
-          <Link to={`name/id`} className="authorCard">
-            <span className="count">30 <i className="fa fa-angle-right"/></span>
-            <div className="card-header">
-              <img src={AuthorBg} alt="AuthorBg"/>
-            </div>
-            <div className="card-body">
-              <div className="author-img">
-                <img src={Avatar} alt="Avatar"/>
-              </div>
-              <div className="author-bio">
-                <h3>James Brawson</h3>
-                <span>@Author</span>
-              </div>
-            </div>
-          </Link>
-          <Link to={`name/id`} className="authorCard">
+          <Link to={`name`} className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>

@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import "./Category.scss";
+import "./SingleCategory.scss";
 import CategoryImage from "../../../assets/images/chair.jpg";
 import CardImage from "../../../assets/images/flower.jpg";
 import Avatar from "../../../assets/images/avatar.jpg";
 import Close from "../../../assets/images/close.svg";
 import HomeWave from '../../../components/HomeWave';
 import { Helmet } from 'react-helmet';
+import TitleDecoration from '../../../components/TitleDecoration';
 
 
 
@@ -22,7 +24,7 @@ const OtherCategory = ({ onClose }) => {
           <img src={Close} alt="close" />
         </div>
         <div className="cat-lists">
-          <Link to="#">
+          <Link to="test1">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -31,7 +33,7 @@ const OtherCategory = ({ onClose }) => {
               <span>40 Articles</span>
             </div>
           </Link>
-          <Link to="#">
+          <Link to="test2">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -40,7 +42,7 @@ const OtherCategory = ({ onClose }) => {
               <span>40 Articles</span>
             </div>
           </Link>
-          <Link to="#">
+          <Link to="test3">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -49,7 +51,7 @@ const OtherCategory = ({ onClose }) => {
               <span>40 Articles</span>
             </div>
           </Link>
-          <Link to="#">
+          <Link to="test4">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -58,7 +60,7 @@ const OtherCategory = ({ onClose }) => {
               <span>40 Articles</span>
             </div>
           </Link>
-          <Link to="#">
+          <Link to="test5">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -67,7 +69,7 @@ const OtherCategory = ({ onClose }) => {
               <span>40 Articles</span>
             </div>
           </Link>
-          <Link to="#">
+          <Link to="test6">
             <div className="cat-small-image">
               <img src={CardImage} alt="close" />
             </div>
@@ -94,62 +96,62 @@ const OtherTags = ({ onClose }) => {
           <img src={Close} alt="close" />
         </div>
         <div className="tag-lists">
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
           </Link>
-          <Link to="#">
+          <Link to="/blog/tags/test">
             <div className="tag-info">
               <h2>Title <span>(40)</span></h2>             
             </div>
@@ -160,10 +162,41 @@ const OtherTags = ({ onClose }) => {
   );
 };
 
+const SingleCategory = ({pageTitle})=>{
+  return(
+    <div className="author-feature-card">
+      <div className="author-avatar">
+        <img alt="author name" src={Avatar}/>
+      </div>
+      <div className="bio">
+        <TitleDecoration title="Adriana Martins" size="big"/>
+        <p>Actively writing articles for this website. I really like traveling and photography, follow me on @Twitter i share content there everyday.</p>
+        <div className="btn filled explore"><i className="fa fa-angle-double-down"/>Explore</div>
+      </div>
+    </div>
+  )
+}
+
 
 
 const Category = () => {  
+  const {pathname} = useLocation();
+  const segments = pathname.split('/');
+  const seoPathName = segments[segments.length - 1];
   const [popup, setPopup] = useState(null); 
+  const {catname, tag, authorname}=useParams();
+  const [catTitle, setCatTitle] = useState("");
+
+
+  useEffect(() => {
+    setCatTitle(
+      catname ? "pageByCategory" : tag ? "pageByTag" : authorname ? "PageByAuthor" : ""
+    );
+  }, [catname, tag, authorname, catTitle]);
+
+  console.log(catTitle);
+
+
   useEffect(() => {
     if (popup) {
       document.body.classList.add("isPopup");
@@ -171,9 +204,11 @@ const Category = () => {
       document.body.classList.remove("isPopup");
     }
     return () => {
-      document.body.classList.remove("ispopup");
+      document.body.classList.remove("isPopup");
     };
   }, [popup]); 
+
+
   const showPopup = (title) => {
     if (title === "otherpopup") {
       setPopup("category");
@@ -181,6 +216,7 @@ const Category = () => {
       setPopup("tags");
     }
   };
+  
   // Close the popup
   const closePopup = () => {
     setPopup(null);
@@ -189,7 +225,7 @@ const Category = () => {
   return (
     <>
       <Helmet>
-        <title>All Categories</title>
+        <title>{catTitle === "pageByCategory" ? seoPathName : "All Categories"} </title>
         <meta name="description" content="Page Description" />
         <meta name="keywords" content="keyword1, keyword2" />
         <link rel="canonical" href="http://mysite.com/example" />
@@ -197,20 +233,27 @@ const Category = () => {
       <div className="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
         <HomeWave/>
       </div>   
-      <div className="container category-page">
-          <div className="cat-feature-image">
-            <img 
-              src={CategoryImage} 
-              alt="feature-image"
-              width="1280"
-              height="450"
-              fetchPriority="high"
-            />
-            <div className="selected-cat-name">
-              <h2>Education</h2>
-              <span>10 Articles</span>
-            </div>
-          </div>
+        <div className={`container category-page ${catTitle}`}>
+
+            {
+              catTitle === "pageByCategory" ? (
+                <SingleCategory pageTitle={catTitle} />
+              ) : (
+                <div className="cat-feature-image">
+                  <img
+                    src={CategoryImage}
+                    alt="feature-image"
+                    width="1280"
+                    height="450"
+                    fetchPriority="high"
+                  />
+                  <div className="selected-cat-name">
+                    <h2>Education</h2>
+                    <span>10 Articles</span>
+                  </div>
+                </div>
+              )
+            }
 
           {/* Render the appropriate popup based on the state */}
           {popup === "category" && <OtherCategory onClose={closePopup} />}
@@ -280,241 +323,7 @@ const Category = () => {
             </div>
           </div>
           <div className="category-container">
-            <div className="cat-card">
-              <Link className="catName">Education</Link>
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-            <div className="cat-card">
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-            <div className="cat-card">
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-            <div className="cat-card">
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-            <div className="cat-card">
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-            <div className="cat-card">
-              <div className="cat-card-image">
-                <img src={CardImage} alt="blot-title"/>
-              </div>
-              <div className="cat-card-body">
-                <div className="meta">
-                  <Link to="/" className="author-bio">
-                    <span className="img">
-                      <img src={Avatar} alt="Author" />
-                    </span>
-                    <span className="author-name">
-                      By <span> Adriana Martins</span>
-                    </span>
-                  </Link>
-                  <time className="time">
-                    <span className="dot"></span>
-                    October 21, 2023
-                  </time>
-                </div>
-                <h2>Modern and colorful style of caricatures created by AI</h2>
-              </div> 
-              <div className="cat-card-footer">
-                <div className="social">
-                  <div className="section-left">
-                    <div className="icon-box value">
-                      <i className="fa fa-heart-o"></i><span>40</span>
-                    </div>
-                    <div className="icon-box value">
-                      <i className="fa fa-comment-o"></i><span>20</span>
-                    </div>
-                  </div>
-                  <div className="section-right">
-                    <div className="icon-box">
-                      <i className="fa fa-bookmark-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
+            <Outlet/>
           </div>
       </div>
     </>

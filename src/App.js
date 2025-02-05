@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Layout from './Layout';
 import Home from './allPages/mobile/home/Home';
@@ -16,6 +16,7 @@ import DesktopCategory from './allPages/desktop/category/Category';
 import DesktopCategoryByName from './allPages/desktop/category/SingleCategory';
 import DesktopAuthor from './allPages/desktop/author/Author';
 import DesktopAuthorPosts from './allPages/desktop/author/AuthorPosts';
+import DesktopCategoryByTags from './allPages/desktop/tags/TagsByName';
 import PageNotFound from './allPages/pageNotFound';
 
 function App() {
@@ -55,11 +56,21 @@ function App() {
           { index: true, element: <DesktopHome /> },
           { path: "blog/post", element: <DesktopPost /> },
           { path: "blog/post/:category/:title/:id", element: <DesktopPostDetails /> },
-          { path: "blog/categories", element: <DesktopCategory /> },
-          { path: "blog/:categories/:catname", element: <DesktopCategoryByName /> },
-          { path: "blog/:tags/:tag", element: <DesktopCategoryByName /> },
+
+          {
+            path: "blog/categories",
+            element: <DesktopCategory />,
+            children: [
+              { index: true, element: <DesktopCategoryByName /> }, 
+              { path: ":catname", element: <DesktopCategoryByName /> },
+            ],
+          },       
+
+          { path: "blog/tags/:tag", element: <DesktopCategoryByTags /> },
+
           { path: "blog/authors", element: <DesktopAuthor /> },
-          { path: "blog/authors/:name/:id", element: <DesktopAuthorPosts /> },
+          { path: "blog/authors/:authorname", element: <DesktopAuthorPosts /> },         
+          
           { path: "login", element: <DesktopLogin /> },
           { path: "register", element: <DesktopRegister /> },
           { path: "*", element: <PageNotFound /> },

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../category/Category.scss";
-import "./AuthorPosts.scss";
 import CardImage from "../../../assets/images/flower.jpg";
 import Avatar from "../../../assets/images/avatar.jpg";
 import HomeWave from '../../../components/HomeWave';
 import { Helmet } from 'react-helmet';
 import TitleDecoration from '../../../components/TitleDecoration';
+import "./AuthorPosts.scss"
 
 
 const AuthorPosts = () => {
@@ -22,15 +21,15 @@ const AuthorPosts = () => {
       <div className="full-width" style={{position:'absolute', overflow:'hidden', width:'100%', height:'100vh', top:'0', zIndex:'-1'}}>
         <HomeWave/>
       </div>   
-      <div className="container category-page author">
+      <div className="container category-page pageByAuthor">
             <div className="author-feature-card">
-              <div class="author-avatar">
-                <img alt="author name" src="/static/media/avatar-3.fb19254f72e8250ca94b.jpg"/>
+              <div className="author-avatar">
+                <img alt="author name" src={Avatar}/>
               </div>
-              <div class="bio">
+              <div className="bio">
                 <TitleDecoration title="Adriana Martins" size="big"/>
                 <p>Actively writing articles for this website. I really like traveling and photography, follow me on @Twitter i share content there everyday.</p>
-                <div class="btn filled explore"><i class="fa fa-angle-double-down"/>Explore</div>
+                <div className="btn filled explore"><i className="fa fa-angle-double-down"/>Explore</div>
               </div>
             </div>
           <div className="container-filter">

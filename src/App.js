@@ -17,7 +17,11 @@ import DesktopCategoryByName from './allPages/desktop/category/SingleCategory';
 import DesktopAuthor from './allPages/desktop/author/Author';
 import DesktopAuthorPosts from './allPages/desktop/author/AuthorPosts';
 import DesktopCategoryByTags from './allPages/desktop/tags/TagsByName';
+import DashBoard from './allPages/dashboard/DashBoard';
 import PageNotFound from './allPages/pageNotFound';
+import AllPosts from './allPages/dashboard/AllPosts';
+import EditProfile from './allPages/dashboard/EditProfile';
+import CreatePosts from './allPages/dashboard/CreatePosts';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
@@ -73,6 +77,21 @@ function App() {
           
           { path: "login", element: <DesktopLogin /> },
           { path: "register", element: <DesktopRegister /> },
+
+
+          {
+            path: "dashboard",
+            element: <DashBoard />,
+            children: [
+              { index: true, element: <Navigate to="/dashboard/all-posts" replace /> }, 
+              { path: "all-posts", element: <AllPosts /> },
+              { path: "create-post", element: <CreatePosts /> },
+              { path: "edit-profile", element: <EditProfile /> },
+            ],
+          }, 
+
+
+
           { path: "*", element: <PageNotFound /> },
         ],
     },

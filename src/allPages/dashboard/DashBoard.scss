@@ -1,0 +1,41 @@
+@import "../../assets/css/Component.scss";
+.page-dashboard{
+    padding:65px;
+    background-color: $white;
+    box-shadow: $boxes-shadow-dark;
+    border-radius: 15px;
+    .dashboard-header{
+        text-align: center;
+        margin-bottom:64px;
+        h2{
+            font-size: $text-xxl;
+            color:$black
+        }
+        p{
+            font-size:$text-sm;
+            color:$text-color;
+            margin:8px 0 0;
+        }
+    }
+    .dashboard-content{
+        @extend .d-flex;
+        justify-content: space-between;
+        gap:60px;
+        position: relative;
+        &:after{
+            content:"";
+            position: absolute;
+            top:0;
+            left:330px;
+            height:100%;
+            width:2px;
+            background-color:$boxes-border-color;
+        }
+        .dashboard-sidebar{
+            width:300px;
+        }
+        .dashboard-content-section{
+            width:calc(100% - 360px);
+        }
+    }
+}

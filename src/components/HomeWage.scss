@@ -6,7 +6,7 @@
     fill: #D6027E;
 }
 
-.waves-page {
+.main-waves {
     position: absolute;
     left: 0;
     top:0;
@@ -16,20 +16,20 @@
     left: -200px;
     -webkit-transform: rotate3d(1, 1, 1, -20deg);
     transform: rotate3d(1, 1, 1, -20deg);
-    .wave {
+    .common-wave {
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        -webkit-animation: slide 15s linear infinite;
-        animation: slide 15s linear infinite;
+        -webkit-animation: slides 15s linear infinite;
+        animation: slides 15s linear infinite;
         will-change: transform;
         z-index: 3;
         &.wave-2 {
             left: -160px;
-            -webkit-animation: swell 15s linear infinite;
-            animation: swell 15s linear infinite;
+            -webkit-animation: swells 15s linear infinite;
+            animation: swells 15s linear infinite;
             z-index: -1;
         }
         &.wave-3 {
@@ -39,21 +39,29 @@
 }
 
 
-@keyframes slide {
+@keyframes slides {
     0% {
-        margin-left: 0;
-    }
-    
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }    
     100% {
-        margin-left: -1140px;
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
     }
 }
 
-@keyframes swell {
-    0%, 100% {
-        transform: translate3d(0, 25px, 0);
+@keyframes swells {
+    0% {
+        -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
     }
+    
     50% {
-        transform: translate3d(0, -2px, 0);
+        -webkit-transform: translate(-500px, 50px);
+        transform: translate(-500px, 50px);
+    }
+    100% {
+        -webkit-transform: translate(-1000px, 0px);
+        transform: translate(-1000px, 0px);
     }
 }

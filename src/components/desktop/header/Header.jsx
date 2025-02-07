@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+import { Link, NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import "./Header.scss";
 
@@ -18,6 +18,7 @@ const useBodyClass = () => {
 };
 
 const Header = () => {
+  const [user, setUser] = useState(true);
   useBodyClass();
   return (
     <header>
@@ -26,20 +27,27 @@ const Header = () => {
           <div className="logo">DA</div>
           <div className="menu-center">
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/blog/categories">Category</Link></li>
-              <li><Link to="/blog/authors">Author</Link></li>
-              <li><Link to="/">Pages</Link></li>
-              <li><Link to="/">Components</Link></li>
-              <li><Link to="/">Feature</Link></li>
-              <li><Link to="/">Contact</Link></li>
-              <li><Link to="/">Search</Link></li>
+              <li><NavLink to="/" end>Home</NavLink></li>
+              <li><NavLink to="/blog/categories" end>Category</NavLink></li>
+              <li><NavLink to="/blog/authors" end>Author</NavLink></li>
+              <li><NavLink to="/" end>Pages</NavLink></li>
+              <li><NavLink to="/" end>Components</NavLink></li>
+              <li><NavLink to="/" end>Feature</NavLink></li>
+              <li><NavLink to="/" end>Contact</NavLink></li>
+              <li><NavLink to="/" end>Search</NavLink></li>
             </ul>
           </div>
           <div className="menu-right">
             <ul>
-              <li className="btn filled"><Link to="/login">Login</Link></li>
-              <li className="btn outline"><Link to="/register">Register</Link></li>
+              {
+                user ? 
+                      <li className="btn outline border-none"><Link to="/dashboard"><i className="fa fa-user-o"/></Link></li> 
+                    : 
+                    <>
+                      <li className="btn filled"><Link to="/login">Login</Link></li>
+                      <li className="btn outline"><Link to="/register">Register</Link></li>
+                    </>
+              }
             </ul>
           </div>
         </div>

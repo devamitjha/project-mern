@@ -38,14 +38,14 @@ const HomeWave = () => {
         </defs>
       </svg>
       
-      <div className="waves-page">
-        <svg className="wave wave-1" xmlns="http://www.w3.org/2000/svg">
+      <div className="main-waves">
+        <svg className="common-wave wave-1" xmlns="http://www.w3.org/2000/svg">
           <rect width="100%" height="400" fill="url(#bg-wave)" />
         </svg>
-        <svg className="wave wave-2" xmlns="http://www.w3.org/2000/svg">
+        <svg className="common-wave wave-2" xmlns="http://www.w3.org/2000/svg">
           <rect width="100%" height="400" fill="url(#bg-wave2)" />
         </svg>
-        <svg className="wave wave-3" xmlns="http://www.w3.org/2000/svg">
+        <svg className="common-wave wave-3" xmlns="http://www.w3.org/2000/svg">
           <rect width="100%" height="400" fill="url(#bg-wave)" />
         </svg>
       </div>

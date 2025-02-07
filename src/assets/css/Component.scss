@@ -137,6 +137,9 @@ $post-text:17px;
     &.outline{
         border:1px solid $primary;
     }
+    &.border-none{
+        border:none;
+    }
 }
 .line-clamp{
     display: -webkit-box;

@@ -21,6 +21,7 @@
     .dashboard-content{
         @extend .d-flex;
         justify-content: space-between;
+        align-items:start;
         gap:60px;
         position: relative;
         &:after{
@@ -147,6 +148,117 @@
                 }
             }      
             
+        }
+    }
+    .create-post,
+    .edit-post,
+    .update-profile-container{
+        display: block;
+        width:100%;
+        border:1px solid $light-gray;
+        padding:20px;
+        border-radius: 15px;
+        .create-post-form,
+        .edit-post-form,
+        .update-profile-form{
+            display: block;
+            width:100%;
+            .input-container{
+                margin-bottom:30px;
+                label{
+                    display:block;
+                    font-size:$text-sm;
+                    color:$black;
+                    margin-bottom:10px;
+                }
+                input,textarea{
+                    display: block;
+                    width:100%;                    
+                    border:1px solid $text-color;
+                    outline:none;
+                    padding:15px;
+                    color:$black;
+                    &::placeholder{
+                        color:$text-color;
+                    }
+                }
+                input{
+                    height:40px;
+                    border-radius: 99999px;
+                }
+                textarea{
+                    border-radius: 15px;
+                    height: 100px;
+                }
+                select{
+                    height:40px;
+                    border-radius:8px;
+                    background-color: transparent;
+                    color:$black;
+                }
+                &.text-area{
+                    p{
+                        margin:8px 0 0;
+                        font-size:12px;
+                        color:$text-color;
+                    }
+                }
+                &.group{
+                    @extend .d-flex;
+                    justify-content: space-between;
+                    .item{
+                        width:48%;
+                        select{
+                            width:100%;
+                        }
+                        .react-datepicker-wrapper{
+                            width:100%;
+                        }
+                    }
+                }
+                .file-group{
+                    border: 2px dashed $text-color;
+                    padding: 20px;
+                    text-align: center;
+                    cursor: pointer;
+                    position: relative;
+                    background-color: $light-gray;
+                    border-radius: 8px;
+                    small{
+                        color:$black;
+                        display: block;
+                        margin-top:8px;
+                    }
+                }
+                &.post-content{
+                    .richText{
+                        height:100%;
+                    }
+                    .richText{
+                        position: relative;
+                        .ql-toolbar{
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            width:100%;
+                            z-index: 99;
+                        }
+                        .ql-container{
+                            height:300px;
+                            padding-top:50px;
+                        }
+                    }
+                }
+            }
+            .submit-button{
+                height:46px;
+                color:$white;
+                font-size:$text-xsm;
+                font-weight: 600;
+                width:150px;
+                padding:0;
+                cursor: pointer;
+            }
         }
     }
 }

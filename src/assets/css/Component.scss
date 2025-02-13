@@ -226,6 +226,63 @@ a.hover{
         }
     }
   }
-  
+
+
+  //custom radio
+.radio-buttons{  
+    .radio-group{
+        @extend .d-flex;
+        justify-content: space-between;
+    } 
+    .form-group{
+        @extend .d-flex;
+        justify-content: space-between;
+        width:48%;
+        padding-left:30px;
+        position:relative;
+        height: 40px;
+        input[type="radio"] {
+            display: none!important;
+        }
+        label {
+            cursor: pointer;
+            position: relative;
+            margin-bottom:0!important;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border: 2px solid $primary;
+                border-radius: 50%;
+                top: 50%;
+                left: -30px;
+                transform: translateY(-50%);
+                transition: border-color 400ms ease;
+              }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color:$primary;
+                border: 2px solid $primary;
+                border-radius: 50%;
+                top: 50%;
+                left: -30px;
+                transform: translateY(-50%) scale(0);
+                transition: transform 400ms ease;
+              }
+        }
+        input[type="radio"]:checked + label::before {
+            border-color: $primary;
+        }
+        
+        input[type="radio"]:checked + label::after {
+            transform: translateY(-50%) scale(0.55);
+        }
+    }
+}
   
   

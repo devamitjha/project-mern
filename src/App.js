@@ -20,8 +20,9 @@ import DesktopCategoryByTags from './allPages/desktop/tags/TagsByName';
 import DashBoard from './allPages/dashboard/DashBoard';
 import PageNotFound from './allPages/pageNotFound';
 import AllPosts from './allPages/dashboard/AllPosts';
-import EditProfile from './allPages/dashboard/EditProfile';
 import CreatePosts from './allPages/dashboard/CreatePosts';
+import EditPosts from './allPages/dashboard/EditPosts';
+import UpdateProfile from './allPages/dashboard/UpdateProfile';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
@@ -86,7 +87,8 @@ function App() {
               { index: true, element: <Navigate to="/dashboard/all-posts" replace /> }, 
               { path: "all-posts", element: <AllPosts /> },
               { path: "create-post", element: <CreatePosts /> },
-              { path: "edit-profile", element: <EditProfile /> },
+              { path: "edit-post/:title/:id", element: <EditPosts /> },
+              { path: "edit-profile", element: <UpdateProfile /> },
             ],
           }, 
 

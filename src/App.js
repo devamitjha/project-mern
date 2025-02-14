@@ -23,6 +23,8 @@ import AllPosts from './allPages/dashboard/AllPosts';
 import CreatePosts from './allPages/dashboard/CreatePosts';
 import EditPosts from './allPages/dashboard/EditPosts';
 import UpdateProfile from './allPages/dashboard/UpdateProfile';
+import AllComments from './allPages/dashboard/AllComments';
+import ContactForm from './allPages/desktop/contact/ContactForm';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
@@ -76,6 +78,7 @@ function App() {
           { path: "blog/authors", element: <DesktopAuthor /> },
           { path: "blog/authors/:authorname", element: <DesktopAuthorPosts /> },         
           
+          { path: "contact", element: <ContactForm /> },
           { path: "login", element: <DesktopLogin /> },
           { path: "register", element: <DesktopRegister /> },
 
@@ -89,6 +92,7 @@ function App() {
               { path: "create-post", element: <CreatePosts /> },
               { path: "edit-post/:title/:id", element: <EditPosts /> },
               { path: "edit-profile", element: <UpdateProfile /> },
+              { path: "all-comments", element: <AllComments /> },
             ],
           }, 
 

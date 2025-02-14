@@ -1,0 +1,16 @@
+@import "../../../assets/css/Component.scss";
+.slider-container{
+    margin:20px 0; 
+    .item{
+        position: relative;
+        background-color:$black;
+        min-height: auto;
+        img{
+            display: block;
+            object-fit: cover;
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 3/2;
+        }
+    }
+}

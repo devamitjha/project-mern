@@ -85,7 +85,7 @@ const CreatePosts = () => {
           <p>Brief description for your article. URLs are hyperlinked.</p>
         </div>
         <div className="input-container group">
-          <div className="category-selection">
+          <div className="item category-selection">
             <label>Category:</label>
             <select value={category} onChange={(e) => setCategory(e.target.value)} required>
               <option value="">Select Category</option>
@@ -94,7 +94,7 @@ const CreatePosts = () => {
               <option value="Business">Business</option>
             </select>
           </div>
-          <div className="tags-container">
+          <div className="item tags-container">
             <label>Tags (comma separated):</label>
             <input type="text" value={tags} onChange={(e) => setTags(e.target.value)}/>
           </div>

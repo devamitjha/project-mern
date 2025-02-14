@@ -53,6 +53,7 @@ const AllPosts = () => {
         <thead>
           <tr>
             <th>Article</th>
+            <th>Author</th>
             <th>Status</th>
             <th>Date</th>
             <th>Actions</th>
@@ -71,6 +72,7 @@ const AllPosts = () => {
                     <div className="post-title">{post.title}</div>
                   </div>
                 </td>
+                <td>Author</td>
                 <td><div className="state active">Active</div></td>
                 <td>date</td>
                 <td>

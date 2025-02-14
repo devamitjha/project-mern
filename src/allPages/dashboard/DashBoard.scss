@@ -64,7 +64,8 @@
     }
 
     //All-Posts
-    .all-posts{
+    .all-posts,
+    .all-comments{
         display:block;
         width:100%;  
         
@@ -83,7 +84,8 @@
             td{
                 font-size:$text-xsm;
                 color:$black;
-                .post-container{
+                .post-container,
+                .comment-container{
                     @extend .d-flex;
                     justify-content: start;
                     .post-image{
@@ -100,7 +102,8 @@
                             object-fit: cover;
                         }
                     }
-                    .post-title{
+                    .post-title,
+                    .comment-title{
                         font-size:$text-xsm;
                     }
                 }

@@ -9,8 +9,9 @@ const useBodyClass = () => {
     const bodyClassMap = {
       "/register": "register-body",
       "/login": "login-body",
+      "/contact": "contact-body",
     };
-    document.body.classList.remove("register-body", "login-body");
+    document.body.classList.remove("register-body", "login-body", "contact-body");
     if (bodyClassMap[location.pathname]) {
       document.body.classList.add(bodyClassMap[location.pathname]);
     }
@@ -24,7 +25,7 @@ const Header = () => {
     <header>
       <div className="container">
         <div className="d-flex justify-between">
-          <div className="logo">DA</div>
+          <div className="logo"><NavLink to="/" end>DA</NavLink></div>
           <div className="menu-center">
             <ul>
               <li><NavLink to="/" end>Home</NavLink></li>
@@ -33,7 +34,7 @@ const Header = () => {
               <li><NavLink to="/" end>Pages</NavLink></li>
               <li><NavLink to="/" end>Components</NavLink></li>
               <li><NavLink to="/" end>Feature</NavLink></li>
-              <li><NavLink to="/" end>Contact</NavLink></li>
+              <li><NavLink to="contact" end>Contact</NavLink></li>
               <li><NavLink to="/" end>Search</NavLink></li>
             </ul>
           </div>

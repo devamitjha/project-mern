@@ -285,4 +285,8 @@ a.hover{
     }
 }
   
-  
+.leaflet-bottom{
+    &.leaflet-right{
+        display:none;
+    }
+}

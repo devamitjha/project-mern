@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mobile-footer">
       Footer
     </div>
   )

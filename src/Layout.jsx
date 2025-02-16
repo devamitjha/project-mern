@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
-import Header from './components/mobile/header/Header';
-import Footer from './components/mobile/Footer/Footer';
+import MobileHeader from './components/mobile/header/Header';
+import MobileFooter from './components/mobile/Footer/Footer';
 import DesktopHeader from './components/desktop/header/Header';
 import DesktopFooter from './components/desktop/Footer/Footer';
 
 const Layout = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,9 +24,9 @@ const Layout = () => {
       
       {isMobile ? (
         <>
-          <Header />
+          <MobileHeader />
           <Outlet />
-          <Footer />
+          <MobileFooter />
         </>
       ) : (
         <>

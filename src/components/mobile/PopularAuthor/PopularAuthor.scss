@@ -1,0 +1,101 @@
+@import "../../../assets/css/Component.scss";
+
+.posts-content{
+    padding:0 15px;
+    &.popular-authors{
+        margin-top:25px;    
+        .title-container{
+            @extend .d-flex;
+            justify-content: space-between;
+            h3{
+                color:$black;
+                font-size:$post-text;
+            }
+            .viewAll{
+                color:$primary;
+                font-size:$text-xsm;
+            }
+        } 
+        .author-list{
+            margin-top:20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            @media(max-width:600px){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            gap:20px;                   
+            .authorCard{
+                width:100%;
+                padding:0;
+                background-color: $white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: $boxes-shadow;
+                transition:all .3s ease-in-out;
+                position: relative;
+                &:hover{
+                    box-shadow: $small-shadow;
+                    transform:translateY(-5px);
+                }
+                .count{
+                    position: absolute;
+                    top:10px;
+                    left:10px;
+                    padding:5px 18px;
+                    border-radius: 99999px;
+                    background-color: rgba($white, .6);
+                    @extend .d-flex;
+                    font-size:12px;
+                    .fa{
+                        font-size:17px;
+                        margin-left:6px;
+                        transform: translateY(-1px);
+                    }
+                }
+                .card-header{
+                    @extend .d-flex;
+                    width:100%;
+                    height:180px;
+                    img{
+                        display: block;
+                        width:100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+                .card-body{
+                    @extend .d-flex;
+                    flex-direction: column;
+                    padding:15px;
+                    .author-img{
+                        width:80px;
+                        height:80px;
+                        border:2px solid $white;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        margin-top:-55px;
+                        img{
+                            display: block;
+                            width:100%;
+                            height:100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .author-bio{
+                        padding:15px 0;
+                        text-align: center;
+                        h3{
+                            font-size:$text-sm;
+                            color:$black;
+                            margin-bottom:4px;
+                        }
+                        span{
+                            font-size:$text-xsm;
+                            color:$text-color;
+                        }
+                    }
+                }
+            }
+        }  
+    }
+}

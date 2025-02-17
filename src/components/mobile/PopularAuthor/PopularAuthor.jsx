@@ -4,15 +4,15 @@ import "./PopularAuthor.scss";
 import Avatar from "../../../assets/images/avatar.jpg";
 import AuthorBg from "../../../assets/images/ball.jpg"
 
-const PopularAuthor = () => {
+const PopularAuthor = () => { 
   return (
     <div className="posts-content popular-authors">
         <div className="title-container">
             <h3>Popular Authors</h3>
-            <span className="viewAll">View All</span>
+            <Link to="blog/authors" className="viewAll">View All</Link>
         </div>
         <div className="author-list">
-          <Link to="/" className="authorCard">
+          <Link to="blog/author/amit-jha" className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -27,7 +27,7 @@ const PopularAuthor = () => {
               </div>
             </div>
           </Link>
-          <Link to="/" className="authorCard">
+          <Link to="blog/author/amit-jha" className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -42,7 +42,7 @@ const PopularAuthor = () => {
               </div>
             </div>
           </Link>
-          <Link to="/" className="authorCard">
+          <Link to="blog/author/amit-jha" className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>
@@ -57,7 +57,7 @@ const PopularAuthor = () => {
               </div>
             </div>
           </Link>
-          <Link to="/" className="authorCard">
+          <Link to="blog/author/amit-jha" className="authorCard">
             <span className="count">30 <i className="fa fa-angle-right"/></span>
             <div className="card-header">
               <img src={AuthorBg} alt="AuthorBg"/>

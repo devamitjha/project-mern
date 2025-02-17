@@ -19,12 +19,12 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
         <HorizontalSlider/>
-        <PostLists title="Popular Posts"/>
+        <PostLists title="Popular Posts" type="post"/>
         <PopularAuthor/>
         <div className="post-of-the-month">
           <SinglePostCard/>
         </div>
-        <PostLists title="In Games"/>
+        <PostLists title="In Games" type="category"/>
         <Trending title="Trending Topics"/>
         <SuggestedCategories title="Suggested Categories"/>
         <BackgroundShapes/>

@@ -7,7 +7,6 @@ const SinglePostCard = () => {
     <div className="posts-content">
         <div className="title-container">
             <h3>Post Of The Month</h3>
-            <span className="viewAll">View All</span>
         </div>
         <div className="sing-card">
             <div className="item">

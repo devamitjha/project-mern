@@ -1,0 +1,117 @@
+@import "../../../assets/css/Component.scss";
+.authorPage{
+    .main-waves{
+        top:-40%;
+    }
+    .container{
+        width:95%;
+    }
+    .author-info{
+        width:90%;
+        margin:8.5vw auto;
+        @extend .d-flex;
+        flex-direction: column;
+
+        h2{
+            font-size:$text-xxl;
+            color:$black;
+            margin-bottom:20px;
+            @media(max-width:1000px){
+                font-size:4vw;
+            }
+        }
+        p{
+            font-size:$text-md;
+            text-align: center;
+            line-height: 1.7;
+            color:$black;
+            @media(max-width:1000px){
+                font-size:3vw;
+            }
+        }
+    }
+    .author-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @media(max-width:1000px){
+            grid-template-columns: repeat(2, 1fr);
+        }  
+        gap:20px;
+        padding-bottom:80px;
+        .authorCard{
+            width:100%;
+            padding:0;
+            background-color: $white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: $boxes-shadow;
+            transition:all .3s ease-in-out;
+            position: relative;
+            &:hover{
+                box-shadow: $small-shadow;
+                transform:translateY(-5px);
+            }
+            .count{
+                position: absolute;
+                top:10px;
+                left:10px;
+                padding:5px 18px;
+                border-radius: 99999px;
+                background-color: rgba($white, .6);
+                @extend .d-flex;
+                font-size:12px;
+                .fa{
+                    font-size:17px;
+                    margin-left:6px;
+                    transform: translateY(-1px);
+                }
+            }
+            .card-header{
+                @extend .d-flex;
+                width:100%;
+                height:180px;
+                @media(max-width:700px){
+                    height:130px;
+                }
+                img{
+                    display: block;
+                    width:100%;
+                    height:100%;
+                    object-fit: cover;
+                }
+            }
+            .card-body{
+                @extend .d-flex;
+                flex-direction: column;
+                padding:15px;
+                .author-img{
+                    width:80px;
+                    height:80px;
+                    border:2px solid $white;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-top:-55px;
+                    img{
+                        display: block;
+                        width:100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+                .author-bio{
+                    padding:15px 0;
+                    text-align: center;
+                    h3{
+                        font-size:$text-sm;
+                        color:$black;
+                        margin-bottom:4px;
+                    }
+                    span{
+                        font-size:$text-xsm;
+                        color:$text-color;
+                    }
+                }
+            }
+        }
+    }
+}

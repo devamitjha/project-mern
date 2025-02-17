@@ -1,6 +1,53 @@
 @import "../../../assets/css/Component.scss";
+.cat-feature-image{
+    @extend .d-flex;
+    width:95%;
+    height:auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow:$boxes-shadow;
+    margin:20px auto;
+    position: relative;
+    img{
+        display: block;
+        object-fit: cover;
+        width: 100%; 
+        height: auto; 
+        aspect-ratio: 9/3;
+        @media(max-width:1000px){
+            aspect-ratio: 16/9;
+        }
+    }
+    &:before{
+        content:"";
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        background: linear-gradient(to top, rgba($black, 0.5), rgba($white, 0));
+    }
+    .selected-cat-name{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        z-index: 9;
+        @extend .d-flex;
+        flex-direction: column;
+        h2{
+            font-size:$text-xxl;
+            color:$white;
+        }
+        span{
+            font-size:$text-sm;
+            color:$white;
+        }
+    }
+}
 
-.cat-lists{
+.cat-lists,
+.category-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     @media(max-width:1000px){

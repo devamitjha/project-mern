@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import "./PostLists.scss";
 import PostImage from "../../../assets/images/ball.jpg";
 
-const PostLists = ({title}) => {
+const PostLists = ({title, type}) => {     
   return (
     <div className="posts-content popular-posts">
         <div className="title-container">
             <h3>{title}</h3>
-            <Link to="blog/post" className="viewAll">View All</Link>
+            <Link to={type==="post"?"blog/post" : "blog/categories/game" } className="viewAll">View All</Link>
         </div>
         <div className="post-list">
             <div className="post-infos">

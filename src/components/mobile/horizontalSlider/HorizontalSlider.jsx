@@ -37,7 +37,7 @@ const HorizontalSlider = () => {
                   <img src={SliderImage2} width="630" height="400" alt="post image"/>              
                   <div className="post-content">
                       <div className="cat-name">Gaming</div>
-                      <div className="post-title">The Exciting Future of Gaming Technology</div>
+                      <div className="post-title line-clamp">The Exciting Future of Gaming Technology</div>
                   </div>
               </div>
             </SwiperSlide>
@@ -46,7 +46,7 @@ const HorizontalSlider = () => {
                   <img src={SliderImage3} width="630" height="400" alt="post image"/>              
                   <div className="post-content">
                       <div className="cat-name">Gaming</div>
-                      <div className="post-title">The Exciting Future of Gaming Technology</div>
+                      <div className="post-title line-clamp">The Exciting Future of Gaming Technology</div>
                   </div>
               </div>
             </SwiperSlide>

@@ -8,31 +8,31 @@ const Footer = () => {
       <ul>
         <li>
           <NavLink to="/">
-            <i class="fa fa-home" aria-hidden="true"></i>
+            <i className="fa fa-home"/>
             <span>Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/">
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i className="fa fa-user"/>
           <span>Login</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <i className="fa fa-search"/>
           <span>Search</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/">
-            <i class="fa fa-code" aria-hidden="true"></i>
+            <i className="fa fa-code"/>
             <span>Feature</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <i className="fa fa-envelope-o"/>
           <span>Contact</span>
           </NavLink>
         </li>

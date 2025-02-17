@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./PostLists.scss";
 import PostImage from "../../../assets/images/ball.jpg";
 
@@ -7,47 +8,55 @@ const PostLists = ({title}) => {
     <div className="posts-content popular-posts">
         <div className="title-container">
             <h3>{title}</h3>
-            <span className="viewAll">View All</span>
+            <Link to="blog/post" className="viewAll">View All</Link>
         </div>
         <div className="post-list">
             <div className="post-infos">
-                <span className="post-category">Game</span>
-                <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                <Link to="blog/categories/game" className="post-category">Game</Link>
+                <Link to="blog/post/game/title/id">
+                    <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                </Link>
                 <div className="post-date">30 minutes ago</div>
             </div>
-            <div className="post-image">
+            <Link to="blog/post/game/title/id" className="post-image">
                 <img src={PostImage} alt="post-image"/>
-            </div>
+            </Link>
         </div>
         <div className="post-list">
             <div className="post-infos">
-                <span className="post-category">Game</span>
-                <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                <Link to="blog/categories/game" className="post-category">Game</Link>
+                <Link to="blog/post/game/title/id">
+                    <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                </Link>
                 <div className="post-date">30 minutes ago</div>
             </div>
-            <div className="post-image">
+            <Link to="blog/post/game/title/id" className="post-image">
                 <img src={PostImage} alt="post-image"/>
-            </div>
+            </Link>
         </div>
         <div className="post-list">
             <div className="post-infos">
-                <span className="post-category">Game</span>
-                <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                <Link to="blog/categories/game" className="post-category">Game</Link>
+                <Link to="blog/post/game/title/id">
+                    <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                </Link>
                 <div className="post-date">30 minutes ago</div>
             </div>
-            <div className="post-image">
+            <Link to="blog/post/game/title/id" className="post-image">
                 <img src={PostImage} alt="post-image"/>
-            </div>
+            </Link>
         </div>
         <div className="post-list">
             <div className="post-infos">
-                <span className="post-category">Game</span>
-                <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                <Link to="blog/categories/game" className="post-category">Game</Link>
+                <Link to="blog/post/game/title/id">
+                    <h2 className="post-title line-clamp">Majestic King of the Savannah: The Untamed Beauty of Lions</h2>
+                </Link>
                 <div className="post-date">30 minutes ago</div>
             </div>
-            <div className="post-image">
+            <Link to="blog/post/game/title/id" className="post-image">
                 <img src={PostImage} alt="post-image"/>
-            </div>
+            </Link>
         </div>
     </div>
   )

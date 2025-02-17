@@ -7,6 +7,13 @@ import PostDetails from './allPages/mobile/postDetails/PostDetails';
 import Login from './allPages/mobile/login/Login';
 import Register from './allPages/mobile/register/Register';
 import Category from './allPages/mobile/category/Category';
+
+import CategoryByName from './allPages/mobile/category/CategoryByName';
+import AllAuthor from './allPages/mobile/author/AllAuthor';
+import AuthorPosts from './allPages/mobile/author/AuthorPosts';
+import CategoryByTags from './allPages/mobile/tags/CategoryByTags';
+
+
 import DesktopHome from './allPages/desktop/home/Home';
 import DesktopPost from './allPages/desktop/post/Post';
 import DesktopPostDetails from './allPages/desktop/postDetails/PostDetails';
@@ -55,8 +62,13 @@ function App() {
           { path: "blog/post", element: <Post /> },
           { path: "blog/post/:category/:title/:id", element: <PostDetails /> },
           { path: "blog/categories", element: <Category /> },
+          { path: "blog/categories/:catname", element: <CategoryByName /> },
+          { path: "blog/authors", element: <AllAuthor /> },
+          { path: "blog/author/:authorname", element: <AuthorPosts /> },
+          { path: "blog/tags/:tag", element: <CategoryByTags /> },
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
+          { path: "contact", element: <ContactForm /> },
           { path: "*", element: <PageNotFound /> },
         ]
       : [

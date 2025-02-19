@@ -1,0 +1,21 @@
+@import "../../../assets/css/Component.scss";
+.signup-tos{
+    font-size: $text-xsm;
+    color:$text-color-light;
+    text-align: center;
+    @extend .d-flex;
+    height:46px;
+    a{
+        text-decoration: underline;
+        margin-left:2px;
+    }
+}
+
+.other-links{    
+    &.register{
+        justify-content: center;
+    }
+    a{
+        margin-left:4px;
+    }
+}

@@ -13,25 +13,25 @@ const Footer = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="login">
           <i className="fa fa-user"/>
           <span>Login</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="/search">
           <i className="fa fa-search"/>
           <span>Search</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="/features">
             <i className="fa fa-code"/>
             <span>Feature</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="/contact">
           <i className="fa fa-envelope-o"/>
           <span>Contact</span>
           </NavLink>

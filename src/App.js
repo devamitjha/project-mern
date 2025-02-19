@@ -32,6 +32,10 @@ import EditPosts from './allPages/dashboard/EditPosts';
 import UpdateProfile from './allPages/dashboard/UpdateProfile';
 import AllComments from './allPages/dashboard/AllComments';
 import ContactForm from './allPages/desktop/contact/ContactForm';
+import ForgotPassword from './allPages/mobile/login/ForgotPassword';
+import Search from './allPages/mobile/search/Search';
+import Features from './allPages/mobile/features/Features';
+import Contact from './allPages/mobile/contact/Contact';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1180);
@@ -68,7 +72,10 @@ function App() {
           { path: "blog/tags/:tag", element: <CategoryByTags /> },
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
-          { path: "contact", element: <ContactForm /> },
+          { path: "forgot-password", element: <ForgotPassword /> },
+          { path: "search", element: <Search /> },
+          { path: "features", element: <Features /> },
+          { path: "contact", element: <Contact /> },
           { path: "*", element: <PageNotFound /> },
         ]
       : [

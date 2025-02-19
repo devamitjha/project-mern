@@ -8,7 +8,7 @@ const PostLists = ({title, type}) => {
     <div className="posts-content popular-posts">
         <div className="title-container">
             <h3>{title}</h3>
-            <Link to={type==="post"?"blog/post" : "blog/categories/game" } className="viewAll">View All</Link>
+            <Link to={type==="post"?"/blog/post" : "/blog/categories/game" } className="viewAll">View All</Link>
         </div>
         <div className="post-list">
             <div className="post-infos">

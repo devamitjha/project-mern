@@ -19,7 +19,7 @@ const useBodyClass = () => {
 };
 
 const Header = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   useBodyClass();
   return (
     <header>

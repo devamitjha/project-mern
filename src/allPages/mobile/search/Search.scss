@@ -2,19 +2,6 @@
 .search-page{
     padding-bottom:90px;
 }
-
-.title-large{
-    height:50px;
-    margin:20px 0 10px 0;
-    @extend .d-flex;
-    justify-content: flex-start;
-    .title-large-text{
-        font-size:$text-xl;
-        padding:0 15px;
-        font-weight: 600;
-    }   
-}
-
 .search-input{
     padding: 0 15px;
     .input-group{
